@@ -24,11 +24,11 @@ var jobSchema = new mongoose.Schema({
 //Create the Schema model
 var Job = mongoose.model("Job", jobSchema);
 
-Job.create({
-	job: "Software Developer",
-	company: "Google",
-	description: "Hello This is a job post"
-});
+// Job.create({
+// 	job: "Software Developer",
+// 	company: "Google",
+// 	description: "Hello This is a job post"
+// });
 
 
 //RESTFUL ROUTES 
