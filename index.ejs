@@ -1,0 +1,33 @@
+<% include ./partials/header%>
+<div class="ui main text container">
+	<div class= ui huge header>Job App</div>
+	<div class="ui top attached segment">
+		<div class="ui divided items">
+			<% jobs.forEach(function(job) {%>
+				<div class="item">
+					<div class="image">
+						<img src="<%=job.job%>">		
+					</div>
+					<div class="content">
+						<a class = "header" href="/jobss/<%= job._id%>"><%= job.company%></a>
+						<div class = "description">
+							<% if(job.description && job.description.length > 0) { %>
+							    <p><%= job.description.substring(0, 100)%> ... </p>
+							<% } %>							
+						</div>
+						<div class="extra">
+							<a class="ui floated basic violet button" href="/jobs/<%= job._id%>">
+								Readmore 
+								<i class= "right chevron icon"></i>
+							</a>	
+						</div>
+					</div>
+				</div>
+			<% })%>			
+		</div>
+	</div>
+</div>
+
+
+
+<% include ./partials/footer%>
