@@ -1,0 +1,24 @@
+<% include ./partials/header%>
+<div class = "ui main text container segment">
+	<div class = "ui huge header"><%= job.title%></div>
+	<div class = "ui top attached">
+		<div class = "item">
+			<div class="content">
+				<span><%= job.dateApplied.toDateString()%></span>
+			</div>
+			<div class="description">
+				<p><%- job.description%></p>
+			</div>
+			<a class="ui orange basic button" href="/jobs/<%= job._id%>/edit">Edit</a>
+			<form id= "delete" action ="/jobs/<%= job._id%>?_method=DELETE" method="POST">
+				<button class="ui red basic button">Delete</button>
+			</form>
+		</div>
+
+	</div>
+
+
+
+
+</div>
+<% include ./partials/footer%>

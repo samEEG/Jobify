@@ -48,6 +48,41 @@ app.get("/jobs", function(req, res){
 	});
 });
 
+//NEW
+app.get("/jobs/new", function(req,res) {
+	res.render("new");
+});
+
+
+//Create Route 
+app.post("/jobs", function(req,res){
+	//create blog
+	req.body.job.body = req.sanitize(req.body.job.body); 
+	Job.create(req.body.job, function(err, newJob){
+		if(err){
+			//console.log(err);
+			res.render("new");
+		}
+		else {
+			res.redirect("/jobs")
+		}
+	});
+	//then, redirect to the index
+});
+
+//Show route 
+app.get("/jobs/:id", function(req, res){
+	Job.findById(req.params.id, function(err, foundJob){
+		if(err){
+			res.redirect("/jobs");
+		}
+		else {
+			res.render("show", {job:foundJob});
+		}
+	});
+});
+
+
 app.listen(3000, function() {
 	console.log("Sever has started");
 })

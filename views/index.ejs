@@ -14,8 +14,14 @@
     <tr>
       <td><%=job.company%></td>
       <td><%=job.job%></td>
-      <td><%=job.dateApplied%></td>
-      <td><%=job.description%></td>
+      <td><%=job.dateApplied.toDateString()%></td>
+      <td>
+        <% if(job.description && job.description.length > 0) { %>
+            <%= job.description.substring(0, 100)%>
+        <% } %> 
+        <div class="extra">
+        <a class="ui floated basic violet button" href="/jobs/<%= job._id%>"> Readmore<i class= "right chevron icon"></i> </a>
+      </td>
     </tr> 
     <% })%>
   </tbody>
