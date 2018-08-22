@@ -3,18 +3,25 @@ i.icon {
 }
 
 .container.main {
-	margin-top: 7.0em;
+	margin: 20px auto;
+	max-width: 600px; 
 	
 }
-
-
+body {
+  text-align: center;
+ }
+#page-wrap {
+  text-align: left;
+  width: 800px;
+  margin: 0 auto;
+}
 
 #delete {
 	display:inline;
 }
 
 .ui.table {
-	margin: 25px 50px 75px 50px;
-	margin-right: 3.0em;
+  width: 800px;
+  margin: 0 auto;
 }
 

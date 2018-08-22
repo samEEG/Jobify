@@ -4,15 +4,15 @@
 	<form class = "ui form" action = "/jobs" method = "POST">
 		<div class = "field">
 			<label>Company</label>		
-			<input type="text" name="job[company]" placeholder="Company">
+			<input type="text" name="job[company]" value= "<%= job.company%>">
 		</div>
 		<div class = "field">
 			<label>Job</label>		
-			<input type="text" name="job[job]" placeholder="Job">
+			<input type="text" name="job[job]" value= "<%= job.job%>">
 		</div>
 		<div class = "field">
 			<label>Description</label>		
-			<textarea name = "job[description]"></textarea>
+			<textarea name = "job[description]"><%= job.description%></textarea>
 		</div>
 
 
