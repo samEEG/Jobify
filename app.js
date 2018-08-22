@@ -56,7 +56,7 @@ app.get("/jobs/new", function(req,res) {
 
 //Create Route 
 app.post("/jobs", function(req,res){
-	//create blog
+	//create job
 	req.body.job.body = req.sanitize(req.body.job.body); 
 	Job.create(req.body.job, function(err, newJob){
 		if(err){
@@ -81,6 +81,46 @@ app.get("/jobs/:id", function(req, res){
 		}
 	});
 });
+
+//Edit Route 
+app.get("/jobs/:id/edit", function(req,res){
+	Job.findById(req.params.id, function(err, foundJob){
+		if(err){
+			res.redirect("/jobs");
+		}
+		else {
+			res.render("edit", {job: foundJob});
+		}
+
+	})
+});
+
+//Update Route 
+app.put("/jobs/:id", function(req,res){
+	req.body.job.body = req.sanitize(req.body.job.body); 
+	Job.findByIdAndUpdate(req.params.id, req.body.job, function(err, updatedJob){
+		if(err){
+			res.redirect("/jobs");
+		}
+		else {
+			res.redirect("/jobs/" + req.params.id);
+		}
+	})
+});
+
+app.delete("/jobs/:id", function(req, res){
+	//destroy job
+	Job.findByIdAndRemove(req.params.id, function(err){
+		if(err){
+			res.redirect("/jobs");
+		}
+		else {
+			res.redirect("/jobs");
+		}
+	})
+})
+
+
 
 
 app.listen(3000, function() {

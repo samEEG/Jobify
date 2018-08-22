@@ -3,8 +3,13 @@
 	<div class = "ui huge header"><%= job.title%></div>
 	<div class = "ui top attached">
 		<div class = "item">
+			<div class = "job">
+				<strong>
+					<span><%= job.job%></span>
+				</strong>
+			</div>
 			<div class="content">
-				<span><%= job.dateApplied.toDateString()%></span>
+				<span><%= job.dateApplied.toDateString() %></span>
 			</div>
 			<div class="description">
 				<p><%- job.description%></p>
