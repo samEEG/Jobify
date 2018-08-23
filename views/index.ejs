@@ -1,5 +1,5 @@
 <% include ./partials/header%>
-
+<div id="page-wrap">
 <div class= "ui huge header">Job Applications</div>
 <table class="ui padded compact table">
   <thead>
@@ -20,15 +20,24 @@
         <% if(job.description && job.description.length > 0) { %>
             <%= job.description.substring(0, 100)%>
         <% } %> 
-        <div class="extra">
-        <a class="ui floated basic violet button" href="/jobs/<%= job._id%>"> Readmore<i class= "right chevron icon"></i> </a>
-      </td>    
+      </td>  
+      <td>
+        <a href="/jobs/<%= job._id%>"> 
+        <div class="ui small basic icon buttons">
+          <button class="ui button">More</button>
+        </div> 
+        </a>  
+        <form id= "delete" action ="/jobs/<%= job._id%>?_method=DELETE" method="POST">
+          <button class="ui red basic button">Delete</button>
+        </form>    
+      </td>  
     <% })%>
     </tr> 
 
   </tbody>
 
 </table>
+</div>
 <% include ./partials/footer%>
 
 
