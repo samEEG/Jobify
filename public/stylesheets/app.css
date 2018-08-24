@@ -8,12 +8,12 @@ i.icon {
 	
 }
 body {
-  text-align: center;
- }
+	text-align: center;
+}
 #page-wrap {
-  text-align: left;
-  width: 800px;
-  margin: 0 auto;
+	text-align: left;
+	width: 800px;
+	margin: 0 auto;
 }
 
 #delete {
@@ -21,7 +21,12 @@ body {
 }
 
 .ui.table {
-  width: 800px;
-  margin: 0 auto;
+	width: 800px;
+	margin: 0 auto;
 }
-
+.search {
+	width: 200px;	
+	height: 10px; 
+	font-size: 0.75em; 
+  	float: right;
+}

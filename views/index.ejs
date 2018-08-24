@@ -1,6 +1,10 @@
 <% include ./partials/header%>
 <div id="page-wrap">
-<div class= "ui huge header">Job Applications</div>
+<div class= "ui huge header">Job Applications
+  <div class="ui input">
+    <input class="search" type="text" placeholder="Search...">
+  </div>
+</div>
 <table class="ui padded compact table">
   <thead>
     <tr>
@@ -29,7 +33,8 @@
         </a>  
         <form id= "delete" action ="/jobs/<%= job._id%>?_method=DELETE" method="POST">
           <button class="ui red basic button">Delete</button>
-        </form>    
+        </form>   
+        <a class="ui orange basic button" href="/jobs/<%= job._id%>/edit">Edit</a>
       </td>  
     <% })%>
     </tr> 
