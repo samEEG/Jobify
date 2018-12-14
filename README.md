@@ -6,3 +6,5 @@ What Can it currently do:
 
 What still needs to be done: 
 - Styling 
+
+We will restarting this project soon 

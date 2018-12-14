@@ -24,9 +24,13 @@ body {
 	width: 800px;
 	margin: 0 auto;
 }
-.search {
+.submit{
 	width: 200px;	
 	height: 10px; 
-	font-size: 0.75em; 
+	font-size: 0.5em; 
   	float: right;
+
+}
+.circular.search.link.icon{
+	font-size: 0.30em; 
 }
